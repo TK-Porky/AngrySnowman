@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3weunvv68lk2"]
+
+[ext_resource type="Script" uid="uid://5nw6tpaociol" path="res://scripts/finish_flag.gd" id="1_7aggx"]
+[ext_resource type="Texture2D" uid="uid://0gy1yseletmf" path="res://assets/Winter Platformer Game Tileset (snow, christmas)/object/pointer2.png" id="2_6xep8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6phe5"]
+size = Vector2(32, 96)
+
+[node name="FinishFlag" type="Area2D"]
+script = ExtResource("1_7aggx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6phe5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-13, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_6xep8")

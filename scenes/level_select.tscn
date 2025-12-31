@@ -1,0 +1,272 @@
+[gd_scene load_steps=25 format=3 uid="uid://bpcls8m0ba0ah"]
+
+[ext_resource type="Script" uid="uid://boc8lkdoylek6" path="res://scripts/level_select.gd" id="1_4nqmc"]
+[ext_resource type="Texture2D" uid="uid://dleolx75xu0jh" path="res://assets/Winter Platformer Game Tileset (snow, christmas)/bg/background2.png" id="1_r77uv"]
+[ext_resource type="Texture2D" uid="uid://c4g572jmfbtia" path="res://assets/Winter Platformer Game Tileset (snow, christmas)/bg/background3.png" id="2_4nqmc"]
+[ext_resource type="FontFile" uid="uid://dunhjr0rqwds2" path="res://assets/bubblegum/Bubblegum.ttf" id="3_7plkq"]
+[ext_resource type="Texture2D" uid="uid://br030b4uyfa0c" path="res://assets/cga_ui_gold/b_1.png" id="4_ckc44"]
+[ext_resource type="Texture2D" uid="uid://cyt66nnv617pv" path="res://assets/cga_ui_gold/bar_1.png" id="5_o2xx4"]
+[ext_resource type="Texture2D" uid="uid://bmcdoybj3xbm1" path="res://assets/cga_ui_gold/b_6.png" id="6_htctk"]
+
+[sub_resource type="Curve" id="Curve_rovvv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.0522523, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8ln24"]
+curve = SubResource("Curve_rovvv")
+
+[sub_resource type="Gradient" id="Gradient_0wyvj"]
+offsets = PackedFloat32Array(0.448, 0.64)
+colors = PackedColorArray(1, 1, 1, 0.3529412, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rtw2f"]
+gradient = SubResource("Gradient_0wyvj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m4qq5"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(500, 1, 1)
+gravity = Vector3(-45, 98, 0)
+scale_max = 4.0
+color_initial_ramp = SubResource("GradientTexture1D_rtw2f")
+alpha_curve = SubResource("CurveTexture_8ln24")
+turbulence_enabled = true
+turbulence_noise_speed_random = 0.0
+turbulence_influence_min = 0.020000001
+turbulence_influence_max = 0.080000006
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s6tf7"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("4_ckc44")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r77uv"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("4_ckc44")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+modulate_color = Color(0.50980395, 0.50980395, 0.50980395, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4nqmc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u4mbh"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("4_ckc44")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7plkq"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("4_ckc44")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+modulate_color = Color(0.50980395, 0.50980395, 0.50980395, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ckc44"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r77uv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7plkq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o2xx4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n1411"]
+texture = ExtResource("5_o2xx4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vxici"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("6_htctk")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thf6c"]
+
+[node name="LevelSelect" type="CanvasLayer"]
+script = ExtResource("1_4nqmc")
+
+[node name="Control" type="Control" parent="."]
+modulate = Color(0.7051935, 0.70519346, 0.70519453, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -192.0
+offset_right = 1848.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.003921569, 1, 1, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_top = -145.0
+offset_right = 2080.0
+offset_bottom = 647.0
+texture = ExtResource("1_r77uv")
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_top = -147.0
+offset_right = 2036.0
+offset_bottom = 647.0
+texture = ExtResource("2_4nqmc")
+
+[node name="SnowParticles" type="GPUParticles2D" parent="."]
+position = Vector2(566, 0)
+amount = 200
+lifetime = 10.0
+preprocess = 30.0
+process_material = SubResource("ParticleProcessMaterial_m4qq5")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -153.5
+offset_right = 97.0
+offset_bottom = 210.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Level1Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(196, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.36862746, 0.03137255, 1)
+theme_override_fonts/font = ExtResource("3_7plkq")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_s6tf7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s6tf7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s6tf7")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r77uv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4nqmc")
+text = "Level 1"
+
+[node name="Level2Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(196, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.36862746, 0.03137255, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_fonts/font = ExtResource("3_7plkq")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u4mbh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u4mbh")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7plkq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ckc44")
+disabled = true
+text = "level 2"
+
+[node name="Level3Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(196, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.36862746, 0.03137255, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_fonts/font = ExtResource("3_7plkq")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u4mbh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u4mbh")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r77uv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r77uv")
+disabled = true
+text = "Level 3"
+
+[node name="Level4Button" type="Button" parent="HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(196, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.36862746, 0.03137255, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_fonts/font = ExtResource("3_7plkq")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u4mbh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u4mbh")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r77uv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7plkq")
+disabled = true
+text = "Level 4"
+
+[node name="Level5Button" type="Button" parent="HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(196, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.36862746, 0.03137255, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_fonts/font = ExtResource("3_7plkq")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_u4mbh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u4mbh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u4mbh")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r77uv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o2xx4")
+disabled = true
+text = "Level 5"
+
+[node name="TextureRect" type="PanelContainer" parent="."]
+offset_left = 327.0
+offset_top = 43.000015
+offset_right = 2010.6666
+offset_bottom = 321.0
+scale = Vector2(0.3, 0.3)
+theme_override_styles/panel = SubResource("StyleBoxTexture_n1411")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_7plkq")
+theme_override_font_sizes/font_size = 144
+text = "Level SELECT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 38.0
+offset_top = 46.0
+offset_right = 102.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(1, 0.36862746, 0.03137255, 1)
+theme_override_fonts/font = ExtResource("3_7plkq")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_vxici")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vxici")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vxici")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_thf6c")

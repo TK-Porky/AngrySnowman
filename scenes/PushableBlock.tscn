@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dplbtfu7a7u28"]
+
+[ext_resource type="Script" uid="uid://dpkwpb55eymqq" path="res://scripts/pushable_block.gd" id="1_7scv3"]
+[ext_resource type="Texture2D" uid="uid://b82oo0roahxcl" path="res://assets/Winter Platformer Game Tileset (snow, christmas)/object/square2.png" id="2_taeao"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_on5l8"]
+size = Vector2(38, 38)
+
+[node name="PushableBlock" type="CharacterBody2D"]
+script = ExtResource("1_7scv3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_taeao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_on5l8")

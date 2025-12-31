@@ -1,0 +1,250 @@
+[gd_scene load_steps=21 format=3 uid="uid://bxp67a4h2rpbk"]
+
+[ext_resource type="Texture2D" uid="uid://dleolx75xu0jh" path="res://assets/Winter Platformer Game Tileset (snow, christmas)/bg/background2.png" id="1_ekxnf"]
+[ext_resource type="Script" uid="uid://dqa21yb62pevv" path="res://scripts/main_menu.gd" id="1_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://c4g572jmfbtia" path="res://assets/Winter Platformer Game Tileset (snow, christmas)/bg/background3.png" id="2_bqqt6"]
+[ext_resource type="FontFile" uid="uid://dunhjr0rqwds2" path="res://assets/bubblegum/Bubblegum.ttf" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://br030b4uyfa0c" path="res://assets/cga_ui_gold/b_1.png" id="4_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://cyt66nnv617pv" path="res://assets/cga_ui_gold/bar_1.png" id="5_oa1go"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbmy8"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("4_rtw2f")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtw2f"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("4_rtw2f")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+modulate_color = Color(0.50980395, 0.50980395, 0.50980395, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oa1go"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jk1qb"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("4_rtw2f")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa1go"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("4_rtw2f")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+modulate_color = Color(0.50980395, 0.50980395, 0.50980395, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbmy8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgwnu"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("4_rtw2f")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+modulate_color = Color(0.50980395, 0.50980395, 0.50980395, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flqon"]
+
+[sub_resource type="Curve" id="Curve_8ln24"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.0522523, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_tbmy8"]
+curve = SubResource("Curve_8ln24")
+
+[sub_resource type="Gradient" id="Gradient_oa1go"]
+offsets = PackedFloat32Array(0.448, 0.64)
+colors = PackedColorArray(1, 1, 1, 0.3529412, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jk1qb"]
+gradient = SubResource("Gradient_oa1go")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jk1qb"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(500, 1, 1)
+gravity = Vector3(-45, 98, 0)
+scale_max = 4.0
+color_initial_ramp = SubResource("GradientTexture1D_jk1qb")
+alpha_curve = SubResource("CurveTexture_tbmy8")
+turbulence_enabled = true
+turbulence_noise_speed_random = 0.0
+turbulence_influence_min = 0.020000001
+turbulence_influence_max = 0.080000006
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dd4i"]
+texture = ExtResource("5_oa1go")
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_rtw2f")
+
+[node name="Control" type="Control" parent="."]
+modulate = Color(0.7051935, 0.70519346, 0.70519453, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -192.0
+offset_right = 1848.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.003921569, 1, 1, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_top = -145.0
+offset_right = 2080.0
+offset_bottom = 647.0
+texture = ExtResource("1_ekxnf")
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_top = -147.0
+offset_right = 2036.0
+offset_bottom = 647.0
+texture = ExtResource("2_bqqt6")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -14.0
+offset_right = 97.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="StartButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(196, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.36862746, 0.03137255, 1)
+theme_override_fonts/font = ExtResource("3_8ln24")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_tbmy8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tbmy8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_rtw2f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa1go")
+text = "Start"
+
+[node name="MusicButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(196, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.36862746, 0.03137255, 1)
+theme_override_fonts/font = ExtResource("3_8ln24")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oa1go")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tbmy8")
+text = "Music: On"
+
+[node name="QuitButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(196, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.36862746, 0.03137255, 1)
+theme_override_fonts/font = ExtResource("3_8ln24")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_lgwnu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flqon")
+text = "Quit"
+
+[node name="SnowParticles" type="GPUParticles2D" parent="."]
+position = Vector2(566, 0)
+amount = 200
+lifetime = 10.0
+preprocess = 30.0
+process_material = SubResource("ParticleProcessMaterial_jk1qb")
+
+[node name="TextureRect" type="PanelContainer" parent="."]
+offset_left = 327.0
+offset_top = 71.000015
+offset_right = 2010.6666
+offset_bottom = 349.0
+scale = Vector2(0.3, 0.3)
+theme_override_styles/panel = SubResource("StyleBoxTexture_5dd4i")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8ln24")
+theme_override_font_sizes/font_size = 144
+text = "Merry Christmas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="."]
+offset_left = 152.0
+offset_top = 154.0
+offset_right = 983.0
+offset_bottom = 308.0
+theme_override_fonts/font = ExtResource("3_8ln24")
+theme_override_font_sizes/font_size = 96
+text = "ANGRY SNOWMAN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 569.0
+offset_right = 474.0
+offset_bottom = 648.0
+theme_override_fonts/font = ExtResource("3_8ln24")
+theme_override_font_sizes/font_size = 24
+text = "© TK-PORKY 2025. All Rights Reserved"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title3" type="Label" parent="."]
+offset_left = 678.0
+offset_top = 569.0
+offset_right = 1145.0
+offset_bottom = 648.0
+theme_override_fonts/font = ExtResource("3_8ln24")
+theme_override_font_sizes/font_size = 24
+text = "tkporky.itch.io"
+horizontal_alignment = 2
+vertical_alignment = 1

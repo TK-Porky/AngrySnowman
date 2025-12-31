@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://crdxk45aggal8"]
+
+[ext_resource type="Script" uid="uid://c8mf0orpgr666" path="res://scripts/collectible.gd" id="1_bkg8t"]
+[ext_resource type="Texture2D" uid="uid://dvjk5d0b637a4" path="res://assets/Winter Platformer Game Tileset (snow, christmas)/object/bonus2.png" id="2_1pg6c"]
+[ext_resource type="AudioStream" uid="uid://dchj16qeef315" path="res://sounds/pickup.wav" id="3_61c27"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2x07"]
+size = Vector2(16, 24)
+
+[node name="Collectible" type="Area2D" groups=["Collectibles"]]
+script = ExtResource("1_bkg8t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_1pg6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k2x07")
+
+[node name="CollectSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_61c27")

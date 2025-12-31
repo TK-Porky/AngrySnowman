@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=3 uid="uid://bppei613qw4bv"]
+
+[ext_resource type="Script" uid="uid://dneu04eggu5lo" path="res://scripts/game_over.gd" id="1_racf3"]
+[ext_resource type="Texture2D" uid="uid://cyt66nnv617pv" path="res://assets/cga_ui_gold/bar_1.png" id="1_tbwuq"]
+[ext_resource type="FontFile" uid="uid://dunhjr0rqwds2" path="res://assets/bubblegum/Bubblegum.ttf" id="2_racf3"]
+[ext_resource type="Texture2D" uid="uid://br030b4uyfa0c" path="res://assets/cga_ui_gold/b_1.png" id="3_7m3ot"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbwuq"]
+texture = ExtResource("1_tbwuq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_racf3"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("3_7m3ot")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v3hpu"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("3_7m3ot")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+modulate_color = Color(0.50980395, 0.50980395, 0.50980395, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_racf3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7m3ot"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("3_7m3ot")
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_racf3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.003921569, 0.003921569, 0.003921569, 0.34901962)
+
+[node name="TextureRect" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 222.00002
+offset_right = 2010.6666
+offset_bottom = 500.0
+scale = Vector2(0.3, 0.3)
+theme_override_styles/panel = SubResource("StyleBoxTexture_tbwuq")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_racf3")
+theme_override_font_sizes/font_size = 144
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.5
+offset_top = 20.5
+offset_right = 254.5
+offset_bottom = 81.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="RestartButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(196, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.36862746, 0.03137255, 1)
+theme_override_fonts/font = ExtResource("2_racf3")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_racf3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_racf3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_racf3")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v3hpu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_racf3")
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(196, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.36862746, 0.03137255, 1)
+theme_override_fonts/font = ExtResource("2_racf3")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_7m3ot")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7m3ot")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7m3ot")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v3hpu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_racf3")
+text = "Quit"

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx63p6u4qok1s"]
+
+[ext_resource type="Script" uid="uid://hjfddrnr51ry" path="res://scripts/spikes.gd" id="1_5pg7g"]
+[ext_resource type="Texture2D" uid="uid://cukebuml1u5h5" path="res://assets/Winter Platformer Game Tileset (snow, christmas)/object/surface2.png" id="2_xbcdo"]
+[ext_resource type="AudioStream" uid="uid://d3jld7sal6uea" path="res://sounds/die.wav" id="3_bflj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uisl"]
+size = Vector2(41, 64)
+
+[node name="Spikes" type="Area2D"]
+script = ExtResource("1_5pg7g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_xbcdo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0uisl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bflj7")
